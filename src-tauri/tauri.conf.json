@@ -1,18 +1,18 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "app",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "identifier": "app",
+  "productName": "app",
   "build": {
-    "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
+    "frontendDist": "../dist",
+    "beforeDevCommand": "npx vite -c teconfig.js",
+    "beforeBuildCommand": "npx tsc && npx vite build -c teconfig.js"
   },
   "app": {
     "windows": [
       {
-        "title": "app",
+        "title": "",
         "width": 800,
         "height": 600
       }

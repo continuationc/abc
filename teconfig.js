@@ -3,7 +3,7 @@ export default async ({ host = process.env.TAURI_DEV_HOST }) => ({
   clearScreen: false,
   plugins: [(await import('@vitejs/plugin-react')).default()],
   resolve: {
-    alias: { '@': (await import('path')).resolve(import.meta.dirname, 'src') },
+    alias: { '@': (await import('path')).resolve(import.meta.dirname, 'app') },
   },
   server: {
     strictPort: true,
@@ -17,7 +17,7 @@ export default async ({ host = process.env.TAURI_DEV_HOST }) => ({
           protocol: 'ws',
         },
     watch: {
-      ignored: ['**/src-tauri/**'],
+      ignored: ['**/lib/**'],
     },
   },
 })
